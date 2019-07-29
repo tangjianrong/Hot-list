@@ -1,0 +1,586 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+a{
+	text-decoration: none;
+}
+body{
+	width: 960px;
+	position: relative;
+}
+
+
+#fabu{
+	display: none;
+	z-index: 1;
+	width: 602px;
+	height: 562px;
+	position: absolute;
+	top: 60px;
+	left: 350px;
+	background-color:#FBFBFF;
+	border-radius: 8px;
+	border: 1px solid #BEBEBE;
+}
+#fabu #f1{
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	border-top-right-radius: 8px;
+	border-top-left-radius: 8px;
+	background-color: #A3D1D1;
+}
+#fabu #f1 #span1{
+	display: block;
+	float: left;
+	width: 100px;
+	padding-left: 18px;
+	font-size: 20px;
+	font-weight: 550;
+	background-color: #A3D1D1;
+	color: #3D7878;
+}
+#fabu #f1 #span2{
+	display: block;
+	cursor: pointer;
+	float: right;
+	width: 30px;
+	padding-right: 10px;
+	font-size: 15px;
+	font-weight: 600;
+	background-color: #A3D1D1;
+	color: #3D7878	;
+}
+#fabu #f2{
+	width: 582px;
+	height: 70px;
+	padding-right: 10px;
+	padding-left: 10px;
+	line-height: 60px;
+	text-align: center;
+	background-color: white;
+}
+#fabu #f2 a{
+	float: left;
+	width: 40px;
+	height: 40px;
+	margin-top: 20px;
+	margin-left: 20px;
+	padding-left: 20px;
+	padding-right: 20px;
+	text-align: center;
+	line-height: 40px;
+	font-size: 20px;
+	border-top-right-radius: 4px;
+	border-top-left-radius: 4px;
+	background-color: #A3D1D1;
+}
+#fabu #f2 hr{
+	width: 100%;
+}
+#fabu #f3{
+	width: 582px;
+	height: 300px;
+	margin-bottom: 10px;
+	padding-right: 10px;
+	padding-left: 10px;
+	background-color: white;
+}
+#fabu #f3 form{
+	width: 100%;
+	margin-bottom: 10px;
+	background-color: white;
+}
+#fabu #f3 span{
+	display: block;
+	float: left;
+	height: 30px;
+	width: 80%;
+	margin-left: 20px;
+	margin-top: 5px;
+	line-height: 30px;
+	font-size: 16px;
+}
+#fabu #f3 form #text{
+	display: block;
+	float: left;
+	width: 76%;
+	height: 40px;
+	margin-bottom: 5px;
+	line-height:30px;
+	font-size: 18px;
+	box-shadow: 2px 2px 2px 2px rgba(192,192,192);
+}
+#fabu #f3 form #submit{
+	display: block;
+	float: left;
+	width: 21%;
+	height: 43px;
+	margin-left:2%;
+	margin-bottom:5px;
+	line-height:30px;
+	background-color: #5CADAD;
+	font-size: 18px;
+	color: white;
+	border-radius: 4px;
+	cursor: pointer;
+}
+#fabu #f3 form #tittle{
+	display: block;
+	float: left;
+	width: 99%;
+	height: 40px;
+	margin-bottom:5px;
+	line-height:30px;
+	font-size: 18px;
+	box-shadow: 2px 2px 2px 2px rgba(192,192,192);
+}
+#fabu #f3 form #textarea{
+	display: block;
+	float: left;
+	width: 99%;
+	height: 100px;
+	margin-bottom:5px;
+	font-size: 18px;
+	box-shadow: 2px 2px 2px 2px rgba(192,192,192);
+}
+#fabu #f4{
+	width: 582px;
+	height: 40px;
+	margin-left: 10px;
+	margin-right: 10px;
+	background-color: white;
+}
+#fabu #f4 span{
+	display: block;
+	float: left;
+	width: 70px;
+	height: 40px;
+	margin-top: 15px;
+	line-height: 40px;
+	text-align: center;
+}
+#fabu #f4 a{
+	display: block;
+	float: left;
+	height: 30px;
+	margin-right: 5px;
+	margin-top: 20px;
+	padding-left: 8px;
+	padding-right: 8px;
+	line-height: 30px;
+	text-align: center;
+	border-radius: 3px;
+	cursor: pointer;
+	background-color:#A3D1D1;
+	color: white;
+}
+#fabu #f5{
+	width: 582px;
+	height: 40px;
+	margin-left: 10px;
+	margin-right: 10px;
+	padding-top: 10px;
+	background-color: white;
+}
+#fabu #f5 #span2{			
+	display: block;
+	cursor: pointer;
+	float: right;
+	width: 100px;
+	height: 40px;
+	margin-top: 10px;
+	line-height: 40px;
+	text-align: center;
+	color: white;
+	background-color: gray;
+	border-radius: 4px;
+}
+#fabu #f5 #span1{
+	display: block;
+	float: right;
+	cursor: pointer;
+	height: 40px;
+	width: 40px;
+	margin-top: 10px;
+	margin-right: 20px;
+	line-height: 40px;
+	text-align: center;
+	color: blue;
+}
+
+
+
+
+#header{
+	width: 100%;
+	height: 50px;
+	padding-left: 200px;
+	padding-right: 200px;
+	position: relative;
+	background-color:#004B97;
+}
+#header #header1{
+	float: left;
+	height: 50px;
+	margin-right: 10px;
+}
+#header #header2{
+	float: right;
+	height: 50px;
+	width: 450px;
+	margin-left: 10px;
+}
+#header #header2 #aimage{
+	width: 140px;
+	height: 50px;
+	position: relative;
+	z-index: 2;
+}
+#header #header2 #aimage>a{
+	color: white;
+}
+#header #header2 #aimage a img{
+	display: block;
+	float: left;
+	width: 30px;
+	height: 30px;
+	padding-top: 10px;
+	line-height: 30px;
+}
+#header #header2 #aimage a p{
+	display: block;
+	float: left;
+	text-align: center;
+}
+#header #header2 #aimage a em{
+	height:0px; 
+	width:0px;
+	margin-left: 8px;
+	margin-top: 22px;
+  	border-top:6px solid gray;
+  	border-left:6px solid transparent  ;
+  	border-right:6px solid transparent  ;
+	float: left;
+}
+#header2 #aimage #divslide{
+	display: none;
+	width: 100%;
+	height: 180px;
+	position: absolute;
+	top: 50px;
+	right: 0;
+}
+#header #aimage #divslide l{
+	display: block;
+	width: 100%;
+	height: 35px;
+	list-style: none;
+	border-bottom: 1px solid #F0F0F0;
+}
+#header #divslide l a{
+	display: block;
+	width: 100%;
+	height: 35px;
+	line-height: 35px;
+	text-align: center;
+	background-color:#FCFCFC;
+	color: #272727;
+}
+#logo{
+	display:block;
+	float:left;
+	height:50px;
+	line-height: 50px;
+	font-size: 20px;
+	text-align: center;
+	color: orange;
+}
+#header1>.a1,#header2>.a2{
+	display: block;
+	float: left;
+	height: 50px;
+	padding-right: 8px;
+	padding-left: 8px;
+	line-height: 50px;
+	text-align: center;
+	font-size: 16px;
+	color: white;
+}
+#header .a2{
+	font-size: 18px;
+}
+#header form{
+	display: block;
+	float: right;
+	height: 50px;
+	padding-top: 10px;
+	line-height: 30px;
+}
+#header form #submit{
+	float:right;
+	width:20%;
+	height:30px;
+	text-align: center;
+	border-left:1px solid gray;
+	cursor: pointer;
+}
+#header form #text{
+	float:right;
+	width:60%;
+	height:30px;
+	text-indent:10px;
+	border:none;
+}
+
+
+
+
+#section{
+	width: 930px;
+	margin-right: 200px;
+	margin-left: 200px;
+	padding-right: 15px;
+	padding-left: 15px;
+}
+#section #head{
+	width: 100%;
+	height: 40px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+#section #head1{
+	float: left;
+	height: 40px;
+	font-weight: 600;
+}
+#section #head2{
+	float: right;
+	height: 40px;
+}
+#section #head .h,#section #head .hh{
+	display: block;
+	float: left;
+	height: 40px;
+	padding-left: 10px;
+	padding-right: 20px;
+	line-height: 40px;
+}
+.broad{
+	cursor: pointer;
+	background-color: #00A600;
+}
+
+
+
+
+.main{
+	height: 100px;
+	padding-bottom: 20px;
+	position: relative;
+}
+.hr{
+	width: 930px;
+	color: gray;
+}
+.main .main_right{
+	float: right;
+	width: 20%;
+	padding-top: 10px;
+}
+.main .main_right img{
+	float: right;
+	width: 80px;
+	height: 80px;
+}
+.main_left{
+	float: left;
+	width: 80%;
+	height: 100px;
+	padding-top: 10px;
+	padding-bottom: 20px;
+}
+#section .main .main_left1{
+	height: 80px;
+}
+#section .main .main_left1 a{
+	font-weight: 600;
+	color: blue;
+}
+.main_left1 span{
+	color: gray;
+} 
+.main_left2{
+	height: 20px;
+	padding-top: 10px;
+}
+.main_left2 span{
+	display: block;
+	float: left;
+	height: 20px;
+	margin-right: 30px;
+	padding-right: 5px;
+	padding-left: 5px;
+	line-height: 20px;
+	text-align: center;
+	color: blue;
+	cursor: pointer;
+}
+
+
+
+#section .main .commentarea{
+	display: none;
+	position: absolute;
+	margin-top: 5px;
+	top: 135px;
+	width: 100%;
+	height: 302px;
+	border: 1px solid gray;
+	background-color: #F0F0F0;
+}
+#section .main .commentarea .closed{
+	padding: 6px 15px 6px 15px;
+	position: absolute;
+	right: 20px;
+	bottom: 10px;
+	color: white;
+	background-color: gray;
+	cursor: pointer;
+}
+#section .main .commentarea .head{
+	width: 90%;
+	height: 30px;
+	padding-right: 5%;
+	padding-left: 5%;
+	line-height: 30px;
+	background-color: #F0F0F0;
+}
+#section .main .commentarea .head .span1{
+	float: left;
+	width: 90px;
+	padding-right: 10px;
+	padding-left: 20px;
+	display: block;
+	height: 30px;
+	line-height: 30px;
+	color: gray;
+}
+#section .main .commentarea .head .span2{
+	float: left;
+	width: 140px;
+	padding-right: 10px;
+	padding-left: 10px;
+	cursor: pointer;
+	display: block;
+	height: 30px;
+	line-height: 30px;
+	color: gray;
+}
+#section .main .commentarea .head .close{
+	float: right;
+	width: 20px;
+	padding-right: 10px;
+	cursor: pointer;
+	display: block;
+	height: 30px;
+	line-height: 30px;
+	color: gray;
+}
+#section .main .commentarea .body{
+	width: 90%;
+	height: 150px;
+	padding-right: 5%;
+	padding-left: 5%;
+	margin-top: 10px;
+	background-color: #F0F0F0;
+}
+#section .main .commentarea .body span{
+	display: block;
+	margin-top: 18px;
+	width: 100%;
+}
+#section .main .commentarea .body .yours{
+	height: 30px;
+}
+#section .main .commentarea .body .yours a{
+	display: block;
+	float: left;
+	width: 10%;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+}
+#section .main .commentarea .body .yours .textarea{
+	display: block;
+	float: left;
+	width: 85%;
+	height: 30px;
+	line-height: 30px;
+	text-indent: 10px;
+}
+#section .main .commentarea .body .finish{
+	display: block;
+	height: 20px;
+	width: 100%;
+}
+#section .main .commentarea .body .finish a{
+	display: block;
+	float: left;
+	height: 20px;
+	width: 10%;
+	line-height: 20px;
+	padding-left: 10px;
+}
+#section .main .commentarea .body .finish p{
+	display: block;
+	width: 85%;
+	height: 20px;
+	float: left;
+	line-height: 20px;
+}
+
+
+
+
+#footer{
+	width: 930px;
+	margin-right: 200px;
+	margin-left: 200px;
+	padding-right: 15px;
+	padding-left: 15px;
+	text-align: center;
+}
+#footer #footer1{
+	width: 930px;
+	height: 25px;
+	margin-top: 20px;
+	margin-left:40px;
+	line-height: 20px;
+	text-align: center;
+}
+#footer #footer1 a{
+	display: block;
+	float: left;
+	padding-right: 15px;
+	padding-left: 15px;
+	border-right: 1px solid;
+	font-size: 10px;
+}
+#footer #footer2{
+	height: 25px;
+	line-height: 20px;
+	font-size: 10px;
+}
+#footer #footer3{
+	height: 25px;
+	line-height: 20px;
+	font-size: 10px;
+}
+#footer #footer4{
+	height: 25px;
+	line-height: 20px;
+	font-size: 10px;
+}

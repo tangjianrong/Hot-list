@@ -1,0 +1,503 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>抽屉新热榜</title>
+	<link rel="stylesheet" href=".\css\index.css">
+	<link rel="icon" type="image/x-icon" href=".\images\band.ico"/>
+</head>
+<body>
+	<script type='text/javascript' src="./info/jquery-3.3.1.js"></script>
+	<script type='text/javascript'>
+        //点赞
+        function like(e) {
+        	$(e).css('color','green')
+        };
+        //打开评论区
+		function showcom(e){
+			$(e).parent('.main_left2').parent('.main_left').parent('.main').children('.commentarea').css('display','block');
+			//需要增加高度给评论区
+			$(e).parent('.main_left2').parent('.main_left').parent('.main').css('height','432px')
+		}
+	$(function(){
+		//header的a标签
+		$('#header1 .a1,#header2 .a2').mouseenter(function(event) {
+			event.stopPropagation();
+			$(this).css('background-color','#6A6AFF');
+		});
+		$('#header1 .a1,#header2 .a2').mouseleave(function(event) {
+			event.stopPropagation();
+			$(this).css('background-color','#004B97');
+		});
+
+		//header 用户户
+        $('#aimage').hover(function() {
+        	console.log('in')
+        	$('#divslide').css('display','block')
+        }, function() {
+        	console.log('out')
+        	$('#divslide').css('display','none')
+        });
+        //a变浅变色
+        $('#aimage div l a').mouseenter(function() {
+        	console.log('i')
+            $(this).css('background-color','#E0E0E0');
+        });
+        $('#aimage div l a').mouseleave(function() {
+        	console.log('n')
+            $(this).css('background-color','#FCFCFC');
+        })
+
+
+        //section head的a
+        $('#section #head .h').hover(function() {
+        	$(this).css('text-decoration','underline');
+        }, function() {
+        	$(this).css('text-decoration','none');
+        });
+
+        //section head 的 发布
+        //'发布'移动变色
+        $('.broad').hover(function() {
+        	$(this).css('background-color','#00DB00')
+        }, function() {
+        	$(this).css('background-color','#00A600')
+        });
+        //打开发布
+        $('.broad').click(function(event) {
+        	event.stopPropagation();
+        	$('#fabu').css('display','block')
+        	$('#fabu #f3 form #text').attr('autofocus','autofocus')
+        });
+        //收起发布
+        $('#fabu #f1 #span2').click(function(event) {
+        	event.stopPropagation();
+        	$('#fabu').css('display','none')
+        });
+
+        //fabu f2，移动背景色改变
+        $('#fabu #f2 div').hover(function() {
+        	$(this).children('a').css('background-color','#D1E9E9')
+        	$(this).children('a').css('text-decoration','underline')
+        }, function() {
+        	$(this).children('a').css('background-color','#A3D1D1')
+        	$(this).children('a').css('text-decoration','none')
+        });
+        
+        //fabu f3 text，聚焦时删除placeholder
+        $('#fabu #f3 form #text').focus(function(event) {
+        	event.stopPropagation();
+        	$(this).attr('placeholder','')	
+        });
+        //失焦时恢复placeholder
+        $('#fabu #f3 form #text').blur(function(event) {
+        	event.stopPropagation();
+        	$(this).attr('placeholder','http://')	
+        	var textl=$('#fabu #f3 form #text').val();
+        	if(textl.trim()){
+        		$('#fabu #f3 form #submit').removeAttr('disabled')
+        		$('#fabu #f3 form #submit').css('background-color','#2828FF')
+        	}
+        	
+        });
+        //点击submit,submit消失，text宽度变大，tittle与textarea可以输入
+        $('#fabu #f3 form #submit').click(function(event) {
+        	event.stopPropagation();
+        	$(this).css('display','none');
+        	$('#fabu #f3 form #text').css('width','99%');
+        	$('#fabu #f3 form #tittle,#fabu #f3 form #textarea').removeAttr('disabled')
+        });
+
+        //fabu f4，移动改变背景色
+        $('#fabu #f4 a').hover(function() {
+        	$(this).css('background-color','#D1E9E9')
+        }, function() {
+        	$(this).css('background-color','#A3D1D1')
+        });
+        $('#fabu #f4 a').click(function(event) {
+        	$(this).css('background-color','#2828FF')
+        });
+
+
+        //fabu f5
+        $('#fabu #f5 #span1').hover(function() {
+        	$(this).css('text-decoration','underline')
+        }, function() {
+        	$(this).css('text-decoration','none')
+        });
+        //清空功能，回复原态
+        $('#fabu #f5 #span1').click(function(event) {
+        	event.stopPropagation();
+        	$('#fabu #f3 form #text,#fabu #f3 form #tittle,#fabu #f3 form #textarea').val('');
+        	$('#fabu #f3 form #submit,#fabu #f3 form #tittle,#fabu #f3 form #textarea').attr('disabled','disabled')
+        	$('#fabu #f3 form #text').css('width','76%');
+        	$('#fabu #f3 form #submit').css({
+        		'display':'block',
+        		'background-color':'#5CADAD',
+        	})
+        });
+
+
+
+        //main
+        //鼠标移入显示下划线
+        $('#section .main .main_left2 .underline,#section .main .main_left1 a').hover(function() {
+        	$(this).css('text-decoration','underline')
+        }, function() {
+        	$(this).css('text-decoration','none')
+        });
+        //点赞
+        $('#section .main .mainlike').click(function(event) {
+        	event.stopPropagation();
+        	$(this).css('color','green')
+        });
+        //评论
+        $('.maincomment').hover(function() {
+        	$(this).css('color','orange')
+        }, function() {
+        	$(this).css('color','blue')
+        });
+        //收起评论区
+        $('#section .main .commentarea .head .close').on('click',function(event) {
+        	$(this).parent('.head').parent('.commentarea').css('display','none');
+        	//回复父元素高度
+        	$(this).parent('.head').parent('.commentarea').parent('.main').css('height','100px')
+        });
+        $('#section .main .commentarea .closed').on('click',function(event) {
+        	$(this).parent('.commentarea').css('display','none');
+        	//回复父元素高度
+        	$(this).parent('.commentarea').parent('.main').css('height','100px')
+        });
+        //'去评论页面'添加下划线
+        $('#section .main .commentarea .span2').hover(function() {
+        	$(this).css('text-decoration','underline')
+        }, function() {
+        	$(this).css('text-decoration','none')
+        });
+
+
+
+
+   		//footer
+   		$('#footer #footer1 .srs').siblings('a').hover(function() {
+   			$(this).css('text-decoration','underline')
+   		}, function() {
+   			$(this).css('text-decoration','none')
+   		});
+	});
+	</script>
+
+
+	<!-- 显示在屏幕中央的'发布'框 -->
+	<div id="fabu">
+		<div id="f1">
+			<span id="span1">分享新发现</span>
+			<span id="span2">X</span>
+		</div>
+		<div id="f2">
+			<div id="f21"><a href="#">链接</a></div>
+			<div id="f22"><a href="#">文字</a></div>
+			<div id="f22"><a href="#">图片</a></div>
+			<hr>
+		</div>
+		<div id="f3">
+			<form action="#">
+				<span>添加链接</span>
+				<input id="text" type="text" placeholder="http://">
+				<input id="submit" type="submit" disabled="none" value='获取标题'>
+				<span>标题</span>
+				<input id='tittle' disabled="none" type="title">
+				<span>添加摘要(选填)</span>
+				<textarea id="textarea"  disabled="disabled" ></textarea>
+			</form>
+		</div>
+		<div id="f4">
+			<span>发布到:</span>
+			<a>42区</a>
+			<a>段子</a>
+			<a>图片</a>
+			<a>挨踢1024</a>
+			<a>你问我答</a>
+		</div>
+		<div id="f5">
+			<span id="span2">发布</span>
+			<span id="span1">清空</span>
+		</div>
+	</div>
+
+
+
+
+	<!-- 网页header -->
+	<div id="header">
+		<div id="header1">
+			<a href="#" id="logo" >抽屉新热榜</a>
+			<a href="#" class="a1">全部</a>
+			<a href="#" class="a1">42区</a>
+			<a href="#" class="a1">段子</a>
+			<a href="#" class="a1">图片</a>
+			<a href="#" class="a1">挨踢1024</a>
+			<a href="#" class="a1">你问我答</a>
+		</div>
+		<div id="header2">
+			<a href="#" class="a2">动态</a>
+			<a href="#" class="a2">通知</a>
+			<div href="#" id='aimage' class="a2 " style="width: 130px;">
+				<a href="#">
+					<img src="./images/westlife.jpg">
+					<p>西城男孩</p>
+					<em></em>
+				</a>
+				<div id='divslide'>
+					<l><a href="#">我的新热榜</a></l>
+					<l><a href="#">我的收藏</a></l>
+					<l><a href="#">我的钱包</a></l>
+					<l><a href="#">设置</a></l>
+					<l><a href="#">退出</a></l>
+				</div>
+			</div>
+			<form action="https://www.baidu.com/s" >
+				<input id="submit" type="submit"><input type="text" id="text">
+			</form>
+		</div>
+	</div>
+
+
+
+
+	<!-- 网页主体 -->
+	<div id="section">
+		<!-- 主体head -->
+		<div id="head">
+			<div id="head1">
+				<a href="#" class='h' style="color: black;">最热</a>
+				<a href="#" class='h' style="color: blue;">发现</a>
+				<a href="#" class='h' style="color: blue;">人类发布</a>
+			</div>
+			<div id="head2">
+				<span class='hh'>即时排序</span>
+				<a href="#" class='h' style="color: green;">24小时</a>
+				<a href="#" class='h' style="color: green;">3天</a>
+				<span href="#" class='hh broad'  style="background-color: green;width: 100px;text-align: center;color: white;">+发布</span>
+			</div>
+		</div>
+		<!-- 主体内容 -->
+		<div id="main1" class='main'>
+			<hr class='hr'>
+			<div class='main_right'>
+				<img src="./images/westlife.jpg" alt="" class='main_img'>
+			</div>
+			<div class='main_left'>
+				<div class='main_left1'>
+					<a href="#" class='main_a'>发表于1965年的《爱丽丝梦游仙境》给后世的少女成长物语提供了一个永恒的框架，那便是“同质——异质——同质”，少女通过出走，走出了舒适圈，来到陌生的外界，最终获得成长后回归到了原点。出走异质世界同样也是对自我的怀疑、寻找自我过程，因此也有人归纳出“迷失——找寻——回归”的叙事框架。</a><span class='main_span'>-mp.weixin.qq.com</span>
+				</div>
+				<div class='main_left2'>
+					<span class='mainlike underline' onclick="like(this)">点赞</span>
+					<span class='maincomment underline' onclick="showcom(this)">评论</span>
+					<span class='maincollect underline'>私藏</span>
+					<a href="#" class='mainauthor underline' style="float: left;margin-right: 20px;">
+						<img class='underline' src="./images/gozap-logo.gif" alt=""> 作者
+					</a>
+					<span class='maintime'>
+						<a href="#" class='underline' style='color: #FF8000;'>7分钟前</a>入热榜
+					</span>
+				</div>
+			</div>
+			<!-- 点击'评论'才显示的'评论区' -->
+			<div class='commentarea'>
+				<div class='head'>
+					<span class='span1'>最热评论</span>
+					<span class='span2'>去评论页面</span>
+					<span class='close'>X</span>
+				</div>
+				<div class='body'>
+					<hr>
+					<span class='yours'>
+						<a href="#">路飞学城</a>
+						<textarea placeholder="请输入您的观点:" class="textarea"></textarea>
+					</span>
+					<span class='finish'>
+						<a href="#">python</a><p>:我是最牛的计算机语言！</p></span>
+					<span class='finish'>
+						<a href="#">java</a><p>:同意！</p></span>
+					<span class='finish'>
+						<a href="#">c</a><p>:非常同意！</p></span>
+					<span class='finish'>
+						<a href="#">linux</a><p>:我竟无法反驳！</p></span>
+				</div>
+				<div class="closed">closed</div>
+			</div>
+		</div>
+		<div id="main2" class='main'>
+			<hr class='hr'>
+			<div class='main_right'>
+				<img src="./images/westlife.jpg" alt="" class='main_img'>
+			</div>
+			<div class='main_left'>
+				<div class='main_left1'>
+					<a href="#" class='main_a'>发表于1965年的《爱丽丝梦游仙境》给后世的少女成长物语提供了一个永恒的框架，那便是“同质——异质——同质”，少女通过出走，走出了舒适圈，来到陌生的外界，最终获得成长后回归到了原点。出走异质世界同样也是对自我的怀疑、寻找自我过程，因此也有人归纳出“迷失——找寻——回归”的叙事框架。</a><span class='main_span'>-mp.weixin.qq.com</span>
+				</div>
+				<div class='main_left2'>
+					<span class='mainlike underline' onclick="like(this)">点赞</span>
+					<span class='maincomment underline'  onclick="showcom(this)">评论</span>
+					<span class='maincollect underline'>私藏</span>
+					<a href="#" class='mainauthor underline' style="float: left;margin-right: 20px;">
+						<img class='underline' src="./images/gozap-logo.gif" alt=""> 作者
+					</a>
+					<span class='maintime'>
+						<a href="#" class='underline' style='color: #FF8000;'>7分钟前</a>入热榜
+					</span>
+				</div>
+			</div>
+			<div class='commentarea'>
+				<div class='head'>
+					<span class='span1'>最热评论</span>
+					<span class='span2'>去评论页面</span>
+					<span class='close'>X</span>
+				</div>
+				<div class='body'>
+					<hr>
+					<span class='yours'>
+						<a href="#">路飞学城</a>
+						<textarea placeholder="请输入您的观点:" class="textarea"></textarea>
+					</span>
+					<span class='finish'>
+						<a href="#">python</a><p>:我是最牛的计算机语言！</p></span>
+					<span class='finish'>
+						<a href="#">java</a><p>:同意！</p></span>
+					<span class='finish'>
+						<a href="#">c</a><p>:非常同意！</p></span>
+					<span class='finish'>
+						<a href="#">linux</a><p>:我竟无法反驳！</p></span>
+				</div>
+				<div class="closed">closed</div>
+			</div>
+		</div>
+		<div id="main3" class='main'>
+			<hr class='hr'>
+			<div class='main_right'>
+				<img src="./images/westlife.jpg" alt="" class='main_img'>
+			</div>
+			<div class='main_left'>
+				<div class='main_left1'>
+					<a href="#" class='main_a'>发表于1965年的《爱丽丝梦游仙境》给后世的少女成长物语提供了一个永恒的框架，那便是“同质——异质——同质”，少女通过出走，走出了舒适圈，来到陌生的外界，最终获得成长后回归到了原点。出走异质世界同样也是对自我的怀疑、寻找自我过程，因此也有人归纳出“迷失——找寻——回归”的叙事框架。</a><span class='main_span'>-mp.weixin.qq.com</span>
+				</div>
+				<div class='main_left2'>
+					<span class='mainlike underline' onclick="like(this)">点赞</span>
+					<span class='maincomment underline'  onclick="showcom(this)">评论</span>
+					<span class='maincollect underline'>私藏</span>
+					<a href="#" class='mainauthor underline' style="float: left;margin-right: 20px;">
+						<img class='underline' src="./images/gozap-logo.gif" alt=""> 作者
+					</a>
+					<span class='maintime'>
+						<a href="#" class='underline' style='color: #FF8000;'>7分钟前</a>入热榜
+					</span>
+				</div>
+			</div>
+			<div class='commentarea'>
+				<div class='head'>
+					<span class='span1'>最热评论</span>
+					<span class='span2'>去评论页面</span>
+					<span class='close'>X</span>
+				</div>
+				<div class='body'>
+					<hr>
+					<span class='yours'>
+						<a href="#">路飞学城</a>
+						<textarea placeholder="请输入您的观点:" class="textarea"></textarea>
+					</span>
+					<span class='finish'>
+						<a href="#">python</a><p>:我是最牛的计算机语言！</p></span>
+					<span class='finish'>
+						<a href="#">java</a><p>:同意！</p></span>
+					<span class='finish'>
+						<a href="#">c</a><p>:非常同意！</p></span>
+					<span class='finish'>
+						<a href="#">linux</a><p>:我竟无法反驳！</p></span>
+				</div>
+				<div class="closed">closed</div>
+			</div>
+		</div>
+		<div id="main4" class='main'>
+			<hr class='hr'>
+			<div class='main_right'>
+				<img src="./images/westlife.jpg" alt="" class='main_img'>
+			</div>
+			<div class='main_left'>
+				<div class='main_left1'>
+					<a href="#" class='main_a'>发表于1965年的《爱丽丝梦游仙境》给后世的少女成长物语提供了一个永恒的框架，那便是“同质——异质——同质”，少女通过出走，走出了舒适圈，来到陌生的外界，最终获得成长后回归到了原点。出走异质世界同样也是对自我的怀疑、寻找自我过程，因此也有人归纳出“迷失——找寻——回归”的叙事框架。</a><span class='main_span'>-mp.weixin.qq.com</span>
+				</div>
+				<div class='main_left2'>
+					<span class='mainlike underline' onclick="like(this)">点赞</span>
+					<span class='maincomment underline'  onclick="showcom(this)">评论</span>
+					<span class='maincollect underline'>私藏</span>
+					<a href="#" class='mainauthor underline' style="float: left;margin-right: 20px;">
+						<img class='underline' src="./images/gozap-logo.gif" alt=""> 作者
+					</a>
+					<span class='maintime'>
+						<a href="#" class='underline' style='color: #FF8000;'>7分钟前</a>入热榜
+					</span>
+				</div>
+			</div>
+			<div class='commentarea'>
+				<div class='head'>
+					<span class='span1'>最热评论</span>
+					<span class='span2'>去评论页面</span>
+					<span class='close'>X</span>
+				</div>
+				<div class='body'>
+					<hr>
+					<span class='yours'>
+						<a href="#">路飞学城</a>
+						<textarea placeholder="请输入您的观点:" class="textarea"></textarea>
+					</span>
+					<span class='finish'>
+						<a href="#">python</a><p>:我是最牛的计算机语言！</p></span>
+					<span class='finish'>
+						<a href="#">java</a><p>:同意！</p></span>
+					<span class='finish'>
+						<a href="#">c</a><p>:非常同意！</p></span>
+					<span class='finish'>
+						<a href="#">linux</a><p>:我竟无法反驳！</p></span>
+				</div>
+				<div class="closed">closed</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+	<!-- 网页footer -->
+	<div id="footer">
+		<hr style="width: 930px;margin-top: 20px;color: gray;text-align: center;">
+		<div id="footer1" >
+			<a href="#">关于我们</a>
+			<a href="#">联系我们</a>
+			<a href="#">服务条款</a>
+			<a href="#">隐私政策</a>
+			<a href="#">抽屉新热榜工具</a>
+			<a href="#">下载客户端</a>
+			<a href="#">意见与反馈</a>
+			<a href="#">友情链接</a>
+			<a href="#">公告</a>
+			<a class='srs' href="#" style="border-right: none;background-color: red;color: white;">RSS</a>
+		</div>
+		<div id="footer2">
+			<a href="#">
+				<img src="./images/gozap-logo.gif" style="width: 60px;height:20px;">
+			</a>&nbsp; 
+			<span>旗下站点 ©2019 chouti.com</span>&nbsp;
+			<a href="#">京IPC备09053974号-3 京公网安备 110102004562</a>
+		</div>
+		<div id="footer3">
+			<span>违法和不良信息举报： 电话:010-58302039 邮箱:</span>
+			<a href="#">jubao@chouti.com</a>
+		</div>
+		<div id="footer4" >
+			<span style="width: 60px;height:20px;">版权所有：北京格致璞科技有限公司</span>
+		</div>
+	</div>
+</body>
+</html>
